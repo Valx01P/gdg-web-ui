@@ -1,19 +1,62 @@
 'use client'
 
+import { useState } from "react"
 import Image from "next/image"
 
 const EventLocationDetails = () => {
-  const eventTime = ""
-  const eventLocation = ""
-  const eventAgendaTimes = []
+  const eventDate = "September 19 – 21, 2025"
+  const eventTime = "6:00 PM – 5:00 PM (EDT)"
+  const eventBuilding = "1501 Biscayne Blvd suite 501"
+  const eventStreet = "1501 Biscayne Boulevard"
+  const eventCity = "Miami, 33132"
+
+  const eventAgendaTimes = {
+    "DAY 1": [
+      { time: "6:00 PM", title: "Check-In" },
+      { time: "8:00 PM", title: "Networking Event" },
+      { time: "11:00 PM", title: "Event Kick-Off" },
+      { time: "11:30 PM", title: "Light Snacks" },
+    ],
+    "DAY 2": [
+      { time: "8:00 AM", title: "Breakfast" },
+      { time: "9:00 AM", title: "Breakfast Ends" },
+      { time: "10:00 AM", title: "Technical Workshop [ Sponsor ]" },
+      { time: "11:00 AM", title: "Technical Workshop [ Sponsor ]" },
+      { time: "12:00 PM", title: "Lunch" },
+      { time: "1:00 PM", title: "Lunch Ends" },
+      { time: "1:00 PM", title: "Mentorship Starts [1pm–6pm]" },
+      { time: "1:30 PM", title: "Technical Workshop [ Sponsor ]" },
+      { time: "2:30 PM", title: "Technical Workshop [ Sponsor ]" },
+      { time: "3:30 PM", title: "Social Activity" },
+      { time: "5:00 PM", title: "Dinner" },
+      { time: "6:00 PM", title: "Dinner Ends" },
+      { time: "6:00 PM", title: "Mentorship Ends [1pm–6pm]" },
+      { time: "7:00 PM", title: "Social Event" },
+    ],
+    "DAY 3": [
+      { time: "8:00 AM", title: "Breakfast" },
+      { time: "9:00 AM", title: "Breakfast Ends" },
+      { time: "9:01 AM", title: "Begin Announcing Submission Deadline" },
+      { time: "9:30 AM", title: "Submissions Due (Soft Deadline)" },
+      { time: "11:00 AM", title: "Hacking Ends (Submissions Hard Deadline)" },
+      { time: "11:30 AM", title: "Lunch" },
+      { time: "12:30 PM", title: "Lunch Ends" },
+      { time: "1:00 PM", title: "Judge Expo Starts" },
+      { time: "3:00 PM", title: "Judge Expo Ends" },
+      { time: "4:00 PM", title: "Closing Ceremony - Event Summary - Sponsor Winners" },
+      { time: "5:00 PM", title: "Venue Closes" },
+    ],
+  }
+
+  const [activeDay, setActiveDay] = useState(Object.keys(eventAgendaTimes)[0])
 
   return (
     <section className="flex justify-center w-full h-auto bg-[#f1f3f4]">
       <div className="flex w-[1170px] h-full py-8 px-4 gap-8">
 
-        <div className="flex flex-col w-full gap-4">
+        <div className="flex flex-col w-full gap-6 py-4">
           {/* TOP */}
-          <div className="flex flex-row w-full gap-4">
+          <div className="flex flex-row w-full gap-4 pr-15">
 
             <div className="flex flex-row w-full">
               <div>
@@ -25,8 +68,12 @@ const EventLocationDetails = () => {
                 />
               </div>
               <div className="flex flex-col w-full pl-4">
-                <h2 className="font-bold text-[22px]">When</h2>
-                <p>{eventTime}</p>
+                <h2 className="font-bold text-[24px]">When</h2>
+                <p>
+                  {eventDate}
+                  <br/>
+                  {eventTime}
+                </p>
               </div>
             </div>
 
@@ -40,8 +87,14 @@ const EventLocationDetails = () => {
                 />
               </div>
               <div className="flex flex-col w-full pl-4">
-                <h2 className="font-bold text-[22px]">Where</h2>
-                <p>{eventLocation}</p>
+                <h2 className="font-bold text-[24px]">Where</h2>
+                <p>
+                  {eventBuilding}
+                  <br/>
+                  {eventStreet}
+                  <br/>
+                  {eventCity}
+                </p>
               </div>
             </div>
 
@@ -69,22 +122,38 @@ const EventLocationDetails = () => {
                   height={45}
                 />
               </div>
-              <div className="flex flex-row w-full">
-                <div className="flex flex-row">
-                  <h1>Agenda</h1>
-                  <ul className="flex flex-row">
-                    <li>Day 1</li>
-                    <li>Day 2</li>
-                    <li>Day 3</li>
+              <div className="flex flex-row w-full pl-4">
+                <div className="flex flex-row justify-center items-center">
+                  <h2 className="font-bold text-[24px]">Agenda</h2>
+                  <ul className="flex justify-center items-center flex-row text-[18px] ml-6 text-gray-600">
+                    {Object.keys(eventAgendaTimes).map((day) => (
+                      <li
+                        key={day}
+                        className={`cursor-pointer px-4 py-1.5 mx-1 box-border ${
+                          activeDay === day
+                            ? "border-b-4 border-blue-600 text-gray-900"
+                            : "border-b-4 border-transparent text-gray-600 hover:border-blue-600 hover:text-gray-900"
+                        }`}
+                        onClick={() => setActiveDay(day)}
+                      >
+                        {day}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col w-full">
-              {/* {eventAgendaTimes.map(() => (
-                return
-              ))} */}
+            {/* Active Day's agenda */}
+            <div className="flex flex-col w-full mt-4 pl-[60px] pb-8 gap-6">
+              {eventAgendaTimes[activeDay].map((item, idx) => (
+                <div key={idx} className="flex flex-col gap-1.5">
+                  {/* Time */}
+                  <span className="font-medium">{item.time}</span>
+                  {/* Title */}
+                  <span className="font-bold text-gray-900 text-[18px]">{item.title}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

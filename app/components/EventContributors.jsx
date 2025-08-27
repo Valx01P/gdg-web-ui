@@ -5,12 +5,17 @@ import Organizers from "./Organizers"
 
 const EventContributors = () => {
   return (
-    <div>
+    <section className="flex justify-center items-center flex-col w-full h-auto bg-white">
       <Speakers />
       <Facilitators />
       <Partners />
       <Organizers />
-    </div>
+      <div className="flex justify-center items-center w-full">
+        <div className="flex justify-center items-center w-[180px] h-[55px] text-[20px] font-bold text-white bg-[#1973e8] rounded-sm my-4">
+          Contact Us
+        </div>
+      </div>
+    </section>
   )
 }
 

@@ -29,7 +29,6 @@ const Nav = () => {
             alt="menu"
             width={240}
             height={30}
-            onClick={() => toggleMobileMenu()}
           />
         </div>
 
