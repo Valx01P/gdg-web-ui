@@ -20,11 +20,11 @@ const Footer = () => {
 
   return (
     <footer className="flex justify-center items-center flex-col w-full h-auto bg-white border-t border-gray-200">
-      <div className="h-full flex flex-col w-[1170px] flex-shrink mx-4 justify-center items-center">
+      <div className="h-full flex flex-col max-w-[1170px] w-full flex-shrink mx-4 max-[770px]:mx-2 justify-center items-center">
 
-        <div className="flex flex-row w-full px-4 min-h-[161px] mt-12">
-          <div className="flex justify-baseline items-baseline w-1/3 p-4">
-            <div className="w-full">
+        <div className="flex flex-row max-[770px]:flex-col w-full px-4 max-[770px]:px-2 min-h-[161px] max-[770px]:min-h-auto mt-12 max-[770px]:mt-8">
+          <div className="flex justify-baseline items-baseline w-1/3 max-[770px]:w-full p-4 max-[770px]:p-2 max-[770px]:justify-center max-[770px]:mb-6">
+            <div className="w-full max-[770px]:flex max-[770px]:justify-center">
               <Image
                 className="cursor-pointer"
                 src="/gdg_logo.svg"
@@ -35,15 +35,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-baseline items-baseline flex-col w-1/3 p-4">
-            <p className="w-full text-gray-700">Quick Links</p>
-            <ul className="flex flex-col gap-1 leading-none mt-2 text-[14px] text-gray-900">
+          <div className="flex justify-baseline items-baseline flex-col w-1/3 max-[770px]:w-full p-4 max-[770px]:p-2 max-[770px]:mb-6 max-[770px]:items-center">
+            <p className="w-full text-gray-700 max-[770px]:text-center max-[770px]:mb-3">Quick Links</p>
+            <ul className="flex flex-col gap-1 leading-none mt-2 max-[770px]:mt-0 text-[14px] text-gray-900 max-[770px]:items-center">
               {linkNames.map((name, idx) => (
                 <li key={idx} className="flex items-center gap-1">
                   <a
                     href={linkUrls[idx]}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="flex items-center gap-1 hover:text-[#1973e8] cursor-pointer"
                   >
                     {/* Hollow chevron */}
@@ -69,9 +67,9 @@ const Footer = () => {
           </div>
 
           {/* Social icons */}
-          <div className="flex justify-baseline items-baseline flex-col w-1/3 p-4 gap-3">
-            <p className="w-full text-gray-700">Social</p>
-            <ul className="flex justify-baseline items-center flex-row w-full gap-1.5">
+          <div className="flex justify-baseline items-baseline flex-col w-1/3 max-[770px]:w-full p-4 max-[770px]:p-2 gap-3 max-[770px]:mb-6">
+            <p className="w-full text-gray-700 max-[770px]:text-center max-[770px]:mb-1">Social</p>
+            <ul className="flex justify-baseline items-center flex-row w-full max-[770px]:justify-center gap-1.5">
               {/* Discord */}
               <a href="https://hacksatfiudiscord.vercel.app/" className="rounded-full p-2 transition-transform duration-300 hover:scale-110">
                 <Image src="/discord.svg" alt="discord" width={18} height={18} />
@@ -122,14 +120,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center w-full p-4">
-          <div className="flex justify-around items-center flex-row w-full text-[14px] px-4">
-            <p className="flex justify-baseline w-full">
+        <div className="flex justify-center items-center w-full p-4 max-[770px]:p-2">
+          <div className="flex justify-around max-[770px]:justify-center max-[770px]:flex-col max-[770px]:gap-4 items-center flex-row w-full text-[14px] px-4 max-[770px]:px-2">
+            <p className="flex justify-baseline w-full max-[770px]:justify-center max-[770px]:w-auto">
               <span className="relative top-[2px] text-[9px] mr-[3px]">©</span> 2025 Google<span className="px-1">∙</span><a href="https://gdg.community.dev/events/">Upcoming Events</a>
             </p>
             <p className="flex flex-row justify-center items-center text-nowrap gap-1">
               Powered by{" "}
-              <a href="https://ba-00001.github.io/codecrunchclub/" className="transition-transform duration-300 hover:scale-110">
+              <a href="https://ba-00001.github.io/codecrunchclub/" target="_blank" rel="noopener noreferrer">
                 <Image
                   className="cursor-pointer"
                   src="/codecrunch_logo.png"

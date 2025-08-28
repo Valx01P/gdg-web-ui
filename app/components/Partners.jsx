@@ -14,16 +14,16 @@ const Partners = () => {
   const partners = [fiu, codecrunch]
 
   return (
-    <div className="flex flex-col items-center w-[1170px] h-full gap-8">
-      <div className="h-full flex flex-col justify-center items-center pb-16">
-        <div className="flex justify-center items-center py-12">
-          <h1 className="text-[44px]">Partners</h1>
+    <div className="flex flex-col items-center max-w-[1170px] w-full h-full gap-8 px-4 max-[770px]:px-2">
+      <div className="h-full flex flex-col justify-center items-center pb-16 max-[770px]:pb-8">
+        <div className="flex justify-center items-center py-12 max-[770px]:py-8">
+          <h1 className="text-[44px] max-[770px]:text-[32px] max-[770px]:text-center">Partners</h1>
         </div>
-        <div className="flex px-2">
+        <div className="flex max-[770px]:flex-col max-[770px]:items-center px-2 max-[770px]:gap-4">
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="w-[265px] my-4 mx-2 h-[148px] border border-gray-200 bg-white rounded-md flex justify-center items-center py-2"
+              className="w-[265px] max-[770px]:w-full max-[770px]:max-w-[320px] my-4 mx-2 max-[770px]:mx-0 h-[148px] border border-gray-200 bg-white rounded-md flex justify-center items-center py-2"
             >
               <Image
                 src={partner.logo_url}

@@ -25,7 +25,7 @@ const EventOverview = () => {
 
         {/* Event Info */}
         <div className="flex flex-col gap-4 px-4">
-          <h1 className="font-bold text-[44px]">{eventName}</h1>
+          <h1 className="font-bold text-[44px] leading-12">{eventName}</h1>
 
           <p>{eventLocation}</p>
 

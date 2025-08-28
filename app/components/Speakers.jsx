@@ -17,9 +17,9 @@ const Speakers = () => {
   const speakers = [bryan_garcia, brian_bazurto]
 
   return (
-    <div className="flex flex-col items-center w-[1170px] h-full pb-8 gap-8">
-      <h1 className="text-[44px] mb-2 mt-20">Speakers</h1>
-      <div className="flex">
+    <div className="flex flex-col items-center max-w-[1170px] w-full h-full pb-8 px-4 max-[770px]:px-2 gap-8">
+      <h1 className="text-[44px] max-[770px]:text-[32px] mb-2 mt-20 max-[770px]:mt-12 max-[770px]:text-center">Speakers</h1>
+      <div className="flex max-[770px]:flex-col max-[770px]:items-center max-[770px]:w-full">
         {speakers.map((speaker) => (
           <PersonCard
             key={speaker.name}

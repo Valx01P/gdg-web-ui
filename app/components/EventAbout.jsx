@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 const EventAbout = () => {
+  const [showAllThemes, setShowAllThemes] = useState(false)
+  
   const themes = [
     "Build with AI",
     "Career Fair",
@@ -17,6 +19,8 @@ const EventAbout = () => {
     "Machine Learning",
     "Vertex AI"
   ]
+
+  const visibleThemes = showAllThemes ? themes : themes.slice(0, 5)
 
   const eventAbout = `
 Hackathon Website: [305hackfall2025.vercel.app](https://305hackfall2025.vercel.app)  
@@ -56,27 +60,50 @@ This hackathon is hosted by GDG at FIU × Code Crunch Global, ColorStack at FIU 
 
   return (
     <section className="flex justify-center w-full h-auto bg-white">
-      <div className="flex w-[1170px] h-full py-8 px-4 gap-8 items-start">
+      <div className="flex max-w-[1170px] w-full h-full py-8 max-[770px]:py-6 px-4 max-[770px]:px-2 gap-8 max-[770px]:gap-6 items-start max-[770px]:flex-col">
         
         {/* Left column */}
-        <div className="flex flex-col w-[240px] gap-4">
-          <h2 className="font-bold text-[17px] leading-none mt-[7px]">Key Themes</h2>
-          <ul className="flex flex-wrap gap-2">
-            {themes.map((theme, idx) => (
-              <li 
-                key={idx} 
-                className="border border-black rounded-full py-1.5 px-3 whitespace-nowrap"
+        <div className="flex flex-col w-[240px] max-[770px]:w-full gap-4">
+          <h2 className="font-bold text-[17px] max-[770px]:text-[16px] leading-none mt-[7px] max-[770px]:mt-0 max-[770px]:text-left">Key Themes</h2>
+          <div className="max-[770px]:flex max-[770px]:flex-col max-[770px]:gap-2">
+            <ul className="flex flex-wrap gap-2 max-[770px]:justify-start">
+              {/* Desktop: show all themes, Mobile: show limited themes */}
+              <span className="max-[770px]:hidden flex flex-wrap gap-2">
+                {themes.map((theme, idx) => (
+                  <li 
+                    key={idx} 
+                    className="border border-black rounded-full py-1.5 px-3 whitespace-nowrap text-[14px]"
+                  >
+                    {theme}
+                  </li>
+                ))}
+              </span>
+              <span className="hidden max-[770px]:flex max-[770px]:flex-wrap max-[770px]:gap-2">
+                {visibleThemes.map((theme, idx) => (
+                  <li 
+                    key={idx} 
+                    className="border border-black rounded-full py-1.5 px-3 whitespace-nowrap text-[14px]"
+                  >
+                    {theme}
+                  </li>
+                ))}
+              </span>
+            </ul>
+            {!showAllThemes && themes.length > 5 && (
+              <button 
+                onClick={() => setShowAllThemes(true)}
+                className="hidden max-[770px]:block text-[#1973e8] text-[14px] text-left hover:underline mt-1"
               >
-                {theme}
-              </li>
-            ))}
-          </ul>
+                View more
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Right column */}
         <div className="flex flex-col w-full gap-4">
-          <h1 className="text-[44px] leading-none">About this event</h1>
-          <div className="prose-custom">
+          <h1 className="text-[44px] max-[770px]:text-[32px] leading-none max-[770px]:text-left">About this event</h1>
+          <div className="prose-custom max-[770px]:text-[14px]">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {eventAbout}
             </ReactMarkdown>

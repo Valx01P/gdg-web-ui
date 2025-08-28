@@ -9,13 +9,13 @@ const QnaRow = ({ question, answer }) => {
       {/* Question */}
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-2 w-auto text-left transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
+        className={`flex items-start max-[770px]:items-center gap-2 w-auto text-left transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
           open ? "underline" : ""
         }`}
       >
         {/* Chevron (right → down) */}
         <span
-          className={`transform transition-transform duration-300 ${
+          className={`transform transition-transform duration-300 flex-shrink-0 mt-0.5 max-[770px]:mt-0 ${
             open ? "rotate-90" : "rotate-0"
           }`}
         >
@@ -34,16 +34,16 @@ const QnaRow = ({ question, answer }) => {
             <polyline points="9 6 15 12 9 18" />
           </svg>
         </span>
-        <span>{question}</span>
+        <span className="break-words">{question}</span>
       </button>
 
       {/* Answer */}
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          open ? "max-h-96 mt-2 border-l-2 border-gray-400 pl-3" : "max-h-0"
+          open ? "max-h-96 mt-2 border-l-2 border-gray-400 pl-3 max-[770px]:pl-4" : "max-h-0"
         }`}
       >
-        <p className="text-gray-700">{answer}</p>
+        <p className="text-gray-700 break-words">{answer}</p>
       </div>
     </div>
   )

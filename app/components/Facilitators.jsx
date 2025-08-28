@@ -11,9 +11,9 @@ const Facilitators = () => {
   const facilitators = [amilcar_pena]
 
   return (
-    <div className="flex flex-col items-center w-[1170px] h-full pb-8 gap-8">
-      <h1 className="text-[44px] mb-2 mt-20">Facilitator</h1>
-      <div className="flex">
+    <div className="flex flex-col items-center max-w-[1170px] w-full h-full pb-8 px-4 max-[770px]:px-2 gap-8">
+      <h1 className="text-[44px] max-[770px]:text-[32px] mb-2 mt-20 max-[770px]:mt-12 max-[770px]:text-center">Facilitator</h1>
+      <div className="flex max-[770px]:flex-col max-[770px]:items-center max-[770px]:w-full">
         {facilitators.map((facilitator) => (
           <PersonCard
             key={facilitator.name}

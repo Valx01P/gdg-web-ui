@@ -75,11 +75,11 @@ const PreviousHackathons = () => {
 
   return (
     <section className="flex justify-center items-center flex-col w-full h-auto bg-white pb-8">
-      <div className="flex w-[1170px] h-full py-12 px-4 gap-16 flex-col">
+      <div className="flex max-w-[1170px] w-full h-full py-12 max-[1100px]:py-8 px-4 max-[1100px]:px-2 gap-16 max-[1100px]:gap-12 flex-col">
         {/* Section Title */}
-        <div className="flex flex-col items-center text-center w-full gap-4 mt-8">
-          <h1 className="text-[44px] leading-none">Our Innovation Journey</h1>
-          <p>
+        <div className="flex flex-col items-center text-center w-full gap-4 max-[1100px]:gap-3 mt-8 max-[1100px]:mt-4">
+          <h1 className="text-[44px] max-[1100px]:text-[32px] leading-none">Our Innovation Journey</h1>
+          <p className="max-[1100px]:text-[14px] max-[1100px]:px-2">
             A timeline of our hackathons building towards smart city solutions.
           </p>
         </div>

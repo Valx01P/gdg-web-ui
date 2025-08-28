@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 
 const EventLocationDetails = () => {
-  const eventDate = "September 19 – 21, 2025"
+  const eventDate = "September 19 – 21, 2025"
   const eventTime = "6:00 PM – 5:00 PM (EDT)"
   const eventBuilding = "1501 Biscayne Blvd suite 501"
   const eventStreet = "1501 Biscayne Boulevard"
@@ -52,24 +52,25 @@ const EventLocationDetails = () => {
 
   return (
     <section className="flex justify-center w-full h-auto bg-[#f1f3f4]">
-      <div className="flex w-[1170px] h-full py-8 px-4 gap-8">
+      <div className="flex max-w-[1170px] w-full h-full py-8 max-[770px]:py-6 px-4 max-[770px]:px-2 gap-8 max-[770px]:gap-6">
 
-        <div className="flex flex-col w-full gap-6 py-4">
+        <div className="flex flex-col w-full gap-6 py-4 max-[770px]:py-0">
           {/* TOP */}
-          <div className="flex flex-row w-full gap-4 pr-15">
+          <div className="flex flex-row max-[770px]:flex-col w-full gap-4 max-[770px]:gap-6 pr-15 max-[770px]:pr-0">
 
-            <div className="flex flex-row w-full">
-              <div>
+            <div className="flex flex-row w-full max-[770px]:w-auto max-[770px]:flex-col max-[770px]:items-center max-[770px]:text-center">
+              <div className="flex-shrink-0">
                 <Image
                   src="/calendar_icon.webp"
                   alt="calendar"
                   width={45}
                   height={45}
+                  style={{ width: '45px', height: '45px' }}
                 />
               </div>
-              <div className="flex flex-col w-full pl-4">
-                <h2 className="font-bold text-[24px]">When</h2>
-                <p>
+              <div className="flex flex-col w-full pl-4 max-[770px]:pl-0 max-[770px]:pt-2">
+                <h2 className="font-bold text-[24px] max-[770px]:text-[20px]">When</h2>
+                <p className="max-[770px]:text-[14px]">
                   {eventDate}
                   <br/>
                   {eventTime}
@@ -77,18 +78,19 @@ const EventLocationDetails = () => {
               </div>
             </div>
 
-            <div className="flex flex-row w-full">
-              <div>
+            <div className="flex flex-row w-full max-[770px]:w-auto max-[770px]:flex-col max-[770px]:items-center max-[770px]:text-center">
+              <div className="flex-shrink-0">
                 <Image
                   src="/location_icon.webp"
                   alt="location"
                   width={45}
                   height={45}
+                  style={{ width: '45px', height: '45px' }}
                 />
               </div>
-              <div className="flex flex-col w-full pl-4">
-                <h2 className="font-bold text-[24px]">Where</h2>
-                <p>
+              <div className="flex flex-col w-full pl-4 max-[770px]:pl-0 max-[770px]:pt-2">
+                <h2 className="font-bold text-[24px] max-[770px]:text-[20px]">Where</h2>
+                <p className="max-[770px]:text-[14px]">
                   {eventBuilding}
                   <br/>
                   {eventStreet}
@@ -98,11 +100,12 @@ const EventLocationDetails = () => {
               </div>
             </div>
 
-            <div>
+            <div className="max-[770px]:w-full max-[770px]:flex max-[770px]:justify-center">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14369.666360294901!2d-80.187412!3d25.789827!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a7ed2a82a9%3A0x19fb95be8a9866cb!2s1501%20Biscayne%20Blvd%20501%201501%2C%20Miami%2C%20FL%2033132!5e0!3m2!1sen!2sus!4v1756194893772!5m2!1sen!2sus"
                 width="300"
                 height="100"
+                className="max-[770px]:w-full max-[770px]:max-w-[350px] max-[770px]:h-[200px]"
                 style={{ border: 0 }}
                 allowFullScreen={true}
                 loading="lazy"
@@ -113,8 +116,8 @@ const EventLocationDetails = () => {
 
           {/* BOTTOM */}
           <div className="flex flex-col w-full">
-            <div className="flex flex-row w-full h-min">
-              <div>
+            <div className="flex flex-row max-[770px]:flex-col w-full h-min max-[770px]:gap-4">
+              <div className="max-[770px]:flex-shrink-0 max-[770px]:flex max-[770px]:justify-center max-[770px]:items-center">
                 <Image
                   src="/clock_icon.webp"
                   alt="clock"
@@ -122,14 +125,14 @@ const EventLocationDetails = () => {
                   height={45}
                 />
               </div>
-              <div className="flex flex-row w-full pl-4">
-                <div className="flex flex-row justify-center items-center">
-                  <h2 className="font-bold text-[24px]">Agenda</h2>
-                  <ul className="flex justify-center items-center flex-row text-[18px] ml-6 text-gray-600">
+              <div className="flex flex-row max-[770px]:flex-col w-full pl-4 max-[770px]:pl-0">
+                <div className="flex flex-row max-[770px]:flex-col justify-center max-[770px]:justify-start items-center max-[770px]:items-center max-[770px]:gap-4">
+                  <h2 className="font-bold text-[24px] max-[770px]:text-[20px] max-[770px]:text-center">Agenda</h2>
+                  <ul className="flex justify-center items-center flex-row max-[770px]:flex-wrap text-[18px] max-[770px]:text-[16px] ml-6 max-[770px]:ml-0 text-gray-600 max-[770px]:gap-1">
                     {Object.keys(eventAgendaTimes).map((day) => (
                       <li
                         key={day}
-                        className={`cursor-pointer px-4 py-1.5 mx-1 box-border ${
+                        className={`cursor-pointer px-4 max-[770px]:px-3 py-1.5 mx-1 max-[770px]:mx-0 box-border ${
                           activeDay === day
                             ? "border-b-4 border-blue-600 text-gray-900"
                             : "border-b-4 border-transparent text-gray-600 hover:border-blue-600 hover:text-gray-900"
@@ -145,13 +148,13 @@ const EventLocationDetails = () => {
             </div>
 
             {/* Active Day's agenda */}
-            <div className="flex flex-col w-full mt-4 pl-[60px] pb-8 gap-6">
+            <div className="flex flex-col w-full mt-4 pl-[60px] max-[770px]:pl-0 pb-8 max-[770px]:pb-4 gap-6 max-[770px]:gap-4">
               {eventAgendaTimes[activeDay].map((item, idx) => (
-                <div key={idx} className="flex flex-col gap-1.5">
+                <div key={idx} className="flex flex-col gap-1.5 max-[770px]:text-center max-[770px]:gap-1">
                   {/* Time */}
-                  <span className="font-medium">{item.time}</span>
+                  <span className="font-medium max-[770px]:text-[14px]">{item.time}</span>
                   {/* Title */}
-                  <span className="font-bold text-gray-900 text-[18px]">{item.title}</span>
+                  <span className="font-bold text-gray-900 text-[18px] max-[770px]:text-[16px]">{item.title}</span>
                 </div>
               ))}
             </div>
