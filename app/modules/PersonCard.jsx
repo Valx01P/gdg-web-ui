@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const PersonCard = ({ profilePictureUrl, name, titles, bio_button=false, bio_link="" }) => {
+const PersonCard = ({ profilePictureUrl, name, titles, bio_button=false, bio_url="" }) => {
   return (
     <div className="flex justify-start items-center flex-col w-[285px] h-[368px] bg-white rounded-xl m-1 px-6">
       
@@ -28,9 +28,9 @@ const PersonCard = ({ profilePictureUrl, name, titles, bio_button=false, bio_lin
         ))}
       </div>
       {bio_button && 
-      <div className="flex justify-center items-center w-[88px] h-[52px] text-[#1973e8] text-[14px] border border-gray-200 bg-white rounded-sm">
+      <a href={`${bio_url}`} className="flex justify-center items-center w-[88px] h-[52px] text-[#1973e8] text-[14px] border border-gray-200 bg-white rounded-sm transition-colors duration-300 ease-in-out hover:bg-blue-50">
         See bio
-      </div>
+      </a>
       }
     </div>
   )

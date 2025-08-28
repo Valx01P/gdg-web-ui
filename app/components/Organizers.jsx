@@ -23,7 +23,7 @@ const Organizers = () => {
             name={organizer.name}
             titles={organizer.titles}
             bio_button={organizer.bio_button}
-            bio_link={organizer.bio_url}
+            bio_url={organizer.bio_url}
           />
         ))}
       </div>

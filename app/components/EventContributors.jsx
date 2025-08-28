@@ -10,10 +10,10 @@ const EventContributors = () => {
       <Facilitators />
       <Partners />
       <Organizers />
-      <div className="flex justify-center items-center w-full">
-        <div className="flex justify-center items-center w-[180px] h-[55px] text-[20px] font-bold text-white bg-[#1973e8] rounded-sm my-4">
+      <div className="flex justify-center items-center w-[1170px]">
+        <a href="" className="flex justify-center items-center w-[180px] h-[55px] text-[20px] font-bold text-white bg-[#1973e8] rounded-sm my-4">
           Contact Us
-        </div>
+        </a>
       </div>
     </section>
   )

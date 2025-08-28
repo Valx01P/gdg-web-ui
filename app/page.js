@@ -5,11 +5,13 @@ import RsvpBanner from "./components/RsvpBanner"
 import EventAbout from "./components/EventAbout"
 import EventLocationDetails from "./components/EventLocationDetails"
 import EventContributors from "./components/EventContributors"
+import Faq from "./components/custom/Faq"
+import PreviousHackathons from "./components/custom/PreviousHackathons"
 import Footer from "./components/Footer"
 
 export default function Home() {
   return (
-    <main className="w-full min-h-dvh bg-amber-100">
+    <main className="w-full min-h-dvh bg-white">
       <Nav />
       <GdgPlatformBanner />
       <EventOverview />
@@ -17,9 +19,9 @@ export default function Home() {
       <EventAbout />
       <EventLocationDetails />
       <EventContributors />
+      <Faq />
+      <PreviousHackathons />
       <Footer />
-      {/* <h1 className="font-bold text-3xl">Google Sans Code Bold</h1>
-      <p className="font-light text-lg">Google Sans Code Light</p> */}
     </main>
   )
 }
