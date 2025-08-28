@@ -45,7 +45,7 @@ const Nav = () => {
 
         <Link href="/" className="flex justify-center items-center h-full">
           <Image
-            className="cursor-pointer transition-transform duration-300 hover:scale-105"
+            className="cursor-pointer"
             src="/gdg_logo.svg"
             alt="menu"
             width={240}

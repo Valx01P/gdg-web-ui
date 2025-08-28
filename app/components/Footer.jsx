@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="flex justify-baseline items-baseline w-1/3 p-4">
             <div className="w-full">
               <Image
-                className="cursor-pointer transition-transform duration-300 hover:scale-110"
+                className="cursor-pointer"
                 src="/gdg_logo.svg"
                 alt="menu"
                 width={196}
@@ -107,7 +107,7 @@ const Footer = () => {
                 </svg>
               </a>
               {/* Email */}
-              <a href="mailto:example@email.com" className="rounded-full p-2 transition-transform duration-300 hover:scale-110 relative ">
+              <a href="mailto:codecrunch@fiu.edu" className="rounded-full p-2 transition-transform duration-300 hover:scale-110 relative ">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"

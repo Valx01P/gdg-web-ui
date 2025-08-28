@@ -1,3 +1,4 @@
+
 export default class Person {
   constructor({ profilePictureUrl, name, titles, bio_button = null, bio_url = null }) {
     this.profilePictureUrl = profilePictureUrl
