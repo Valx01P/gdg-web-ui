@@ -9,13 +9,13 @@ const QnaRow = ({ question, answer }) => {
       {/* Question */}
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-start max-[770px]:items-center gap-2 w-auto text-left transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
+        className={`flex items-center justify-center gap-2 w-auto text-center transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
           open ? "underline" : ""
         }`}
       >
         {/* Chevron (right → down) */}
         <span
-          className={`transform transition-transform duration-300 flex-shrink-0 mt-0.5 max-[770px]:mt-0 ${
+          className={`transform transition-transform duration-300 flex-shrink-0 ${
             open ? "rotate-90" : "rotate-0"
           }`}
         >
