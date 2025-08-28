@@ -23,9 +23,6 @@ const PreviousHackathons = () => {
         "A virtual hackathon connecting students and industry experts through technical challenges and mentorship, advancing skills needed for complex urban technology solutions.",
       link: "https://CodeStormHack2025.vercel.app",
     },
-  ]
-
-  const upcomingEvents = [
     {
       date: "July 19–26, 2025",
       title: "☀️ SummerCodeX Hack 2025",
@@ -33,6 +30,10 @@ const PreviousHackathons = () => {
         "An intensive virtual summer hackathon focusing on beginner-friendly tracks, mobile app development, and cloud solutions – building the technical foundation for smart city applications.",
       link: "https://SummerCodexHack2025.vercel.app",
     },
+  ]
+
+  const upcomingEvents = [
+
     {
       date: "September 20–22, 2025",
       title: "🍂 305 Hack Fall 2025",
