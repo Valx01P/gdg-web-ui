@@ -27,7 +27,7 @@ const Faq = () => {
     <section className="flex justify-center w-full h-auto bg-[#f1f3f4]">
       <div className="flex w-[1170px] h-full py-12 px-4 gap-8 flex-col">
         <h1 className="text-[44px] leading-none">Frequently Asked Questions</h1>
-        <div className="flex flex-col w-full gap-6 p-4">
+        <div className="flex flex-col w-full gap-6 ">
           {questions.map((q, i) => (
             <QnaRow key={i} question={q} answer={answers[i]} />
           ))}

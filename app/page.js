@@ -5,8 +5,8 @@ import RsvpBanner from "./components/RsvpBanner"
 import EventAbout from "./components/EventAbout"
 import EventLocationDetails from "./components/EventLocationDetails"
 import EventContributors from "./components/EventContributors"
-import Faq from "./components/custom/Faq"
 import PreviousHackathons from "./components/custom/PreviousHackathons"
+import Faq from "./components/custom/Faq"
 import Footer from "./components/Footer"
 
 export default function Home() {
@@ -19,8 +19,8 @@ export default function Home() {
       <EventAbout />
       <EventLocationDetails />
       <EventContributors />
-      <Faq />
       <PreviousHackathons />
+      <Faq />
       <Footer />
     </main>
   )
