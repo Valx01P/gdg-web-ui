@@ -9,7 +9,7 @@ const QnaRow = ({ question, answer }) => {
       {/* Question */}
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center justify-center gap-2 w-auto text-center transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
+        className={`flex items-center justify-center gap-2 w-auto transition-colors duration-300 hover:cursor-pointer hover:text-[#1973e8] ${
           open ? "underline" : ""
         }`}
       >
