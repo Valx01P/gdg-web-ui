@@ -34,7 +34,7 @@ const QnaRow = ({ question, answer }) => {
             <polyline points="9 6 15 12 9 18" />
           </svg>
         </span>
-        <span className="break-words">{question}</span>
+        <span className="break-words text-left">{question}</span>
       </button>
 
       {/* Answer */}
